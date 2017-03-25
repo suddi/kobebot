@@ -19,7 +19,7 @@
   "files": [
     "lib"
   ],
-  "main": "lib/index.js",
+  "main": "lib/app.js",
   "license": "Apache-2.0",
   "keywords": [],
   "engines": {
@@ -29,19 +29,16 @@
   "scripts": {
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover _mocha -- --opts test/options/default.opts",
-    "deploy-init": "claudia create --name kobebot --region ap-northeast-1 --api-module lib",
-    "deploy": "claudia update --version production",
     "doctest": "mocha --opts test/options/doctest.opts",
     "lint": "eslint .",
     "prepush": "npm test",
     "security-check": "nsp check --output summary",
-    "start": "node lib/index.js",
-    "test": "npm run lint && npm run security-check && npm run doctest",
-    "webhook": "node scripts/test_webhook.js"
+    "start": "node lib/app.js",
+    "test": "npm run lint && npm run security-check && npm run doctest"
   },
   "dependencies": {
-    "botbuilder": "^3.7.0",
-    "claudia-api-builder": "^2.0.0"
+    "botbuilder": "^3.0.0",
+    "restify": "^4.3.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",
@@ -54,7 +51,6 @@
     "jsdoctest": "^1.0.0",
     "mocha": "^3.0.0",
     "nsp": "^2.0.0",
-    "restify": "^4.3.0",
     "rewire": "^2.0.0",
     "sinon": "^2.0.0"
   },
