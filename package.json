@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "botbuilder": "^3.0.0",
-    "restify": "^4.3.0"
+    "restify": "^4.0.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",
