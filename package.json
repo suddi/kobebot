@@ -1,0 +1,64 @@
+{
+  "name": "kobebot",
+  "description": "Chat with man's best friend",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://github.com/suddi/kobebot",
+  "author": {
+    "name": "Sudharshan Ravindran",
+    "email": "mail@suddi.io",
+    "url": "https://suddi.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suddi/kobebot"
+  },
+  "bugs": {
+    "url": "https://github.com/suddi/kobebot/issues"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "license": "Apache-2.0",
+  "keywords": [],
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 2.0.0"
+  },
+  "scripts": {
+    "check-coverage": "istanbul check-coverage",
+    "coverage": "istanbul cover _mocha -- --opts test/options/default.opts",
+    "deploy-init": "claudia create --name kobebot --region ap-northeast-1 --api-module lib",
+    "deploy": "claudia update --version production",
+    "doctest": "mocha --opts test/options/doctest.opts",
+    "lint": "eslint .",
+    "prepush": "npm test",
+    "security-check": "nsp check --output summary",
+    "start": "node lib/index.js",
+    "test": "npm run lint && npm run security-check && npm run doctest",
+    "webhook": "node scripts/test_webhook.js"
+  },
+  "dependencies": {
+    "botbuilder": "^3.7.0",
+    "claudia-api-builder": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "claudia": "^2.0.0",
+    "co-mocha": "^1.0.0",
+    "eslint": "^3.0.0",
+    "eslint-config-suddi": "^3.0.0",
+    "husky": "^0.13.0",
+    "istanbul": "^0.4.0",
+    "jsdoctest": "^1.0.0",
+    "mocha": "^3.0.0",
+    "nsp": "^2.0.0",
+    "restify": "^4.3.0",
+    "rewire": "^2.0.0",
+    "sinon": "^2.0.0"
+  },
+  "eslintConfig": {
+    "extends": "suddi/backend"
+  }
+}

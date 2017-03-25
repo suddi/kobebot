@@ -1,0 +1,4 @@
+lib
+--recursive
+--require jsdoctest
+--reporter spec

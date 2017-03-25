@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "knightwatcherbot-executor",
+    "name": "knightwatcherbot",
+    "region": "ap-northeast-1"
+  },
+  "api": {
+    "id": "h0mign4q98",
+    "module": "lib"
+  }
+}
