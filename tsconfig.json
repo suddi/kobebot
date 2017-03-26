@@ -1,0 +1,52 @@
+{
+    "compilerOptions": {
+        "charset": "utf8",
+
+        "declaration": false,
+
+        "diagnostics": true,
+
+        "emitBOM": false,
+
+        "inlineSourceMap": true,
+        "inlineSources": true,
+
+        "listFiles": false,
+
+        "alwaysStrict": true,
+        "forceConsistentCasingInFileNames": true,
+        "preserveConstEnums": true,
+        "strictNullChecks": true,
+        "importHelpers": false,
+
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "allowJs": false,
+        "allowSyntheticDefaultImports": false,
+
+        "noImplicitUseStrict": false,
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noLib": false,
+        "noResolve": false,
+        "noFallthroughCasesInSwitch": true,
+
+        "outDir": "lib",
+
+        "removeComments": true,
+        "rootDir": "src",
+
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es2016",
+        "watch": false
+    },
+    "include": [
+        "src"
+    ]
+}

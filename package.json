@@ -17,9 +17,9 @@
     "url": "https://github.com/suddi/kobebot/issues"
   },
   "files": [
-    "lib"
+    "src"
   ],
-  "main": "lib/app.js",
+  "main": "src/app.js",
   "license": "Apache-2.0",
   "keywords": [],
   "engines": {
@@ -28,21 +28,27 @@
   },
   "scripts": {
     "check-coverage": "istanbul check-coverage",
+    "compile": "tsc",
     "coverage": "istanbul cover _mocha -- --opts test/options/default.opts",
     "doctest": "mocha --opts test/options/doctest.opts",
     "lint": "eslint .",
     "prepush": "npm test",
     "security-check": "nsp check --output summary",
-    "start": "node lib/app.js",
-    "test": "npm run lint && npm run security-check && npm run doctest"
+    "start": "ts-node --project tsconfig.json src/app.ts",
+    "test": "npm run lint && npm run security-check"
   },
   "dependencies": {
+    "@types/lodash": "^4.0.0",
+    "@types/restify": "^2.0.0",
     "botbuilder": "^3.0.0",
-    "restify": "^4.0.0"
+    "lodash": "^4.17.4",
+    "restify": "^4.3.0",
+    "talkify": "^2.1.0",
+    "ts-node": "^3.0.2"
   },
   "devDependencies": {
+    "@types/node": "^7.0.0",
     "chai": "^3.0.0",
-    "claudia": "^2.0.0",
     "co-mocha": "^1.0.0",
     "eslint": "^3.0.0",
     "eslint-config-suddi": "^3.0.0",
@@ -52,9 +58,12 @@
     "mocha": "^3.0.0",
     "nsp": "^2.0.0",
     "rewire": "^2.0.0",
-    "sinon": "^2.0.0"
+    "sinon": "^2.0.0",
+    "typescript": "^2.0.0",
+    "typescript-eslint-parser": "^2.0.0"
   },
   "eslintConfig": {
-    "extends": "suddi/backend"
+    "extends": "suddi/backend",
+    "parser": "typescript-eslint-parser"
   }
 }
