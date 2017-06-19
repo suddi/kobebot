@@ -46,7 +46,7 @@
   "devDependencies": {
     "@types/lodash": "^4.0.0",
     "@types/restify": "^4.3.2",
-    "@types/node": "^7.0.0",
+    "@types/node": "^8.0.0",
     "chai": "^4.0.0",
     "co-mocha": "^1.0.0",
     "eslint": "^3.0.0",
