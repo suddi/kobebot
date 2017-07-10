@@ -60,7 +60,7 @@
     "sinon": "^2.0.0",
     "ts-node": "^3.0.0",
     "typescript": "^2.0.0",
-    "typescript-eslint-parser": "^3.0.0"
+    "typescript-eslint-parser": "^4.0.0"
   },
   "eslintConfig": {
     "extends": "suddi/backend",
