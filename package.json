@@ -35,7 +35,7 @@
     "prepush": "npm test",
     "security-check": "nsp check --output summary",
     "start": "ts-node --project tsconfig.json src/app.ts",
-    "test": "npm run lint="
+    "test": "npm run lint"
   },
   "dependencies": {
     "botbuilder": "^3.0.0",
