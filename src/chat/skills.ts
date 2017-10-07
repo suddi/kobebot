@@ -1,18 +1,14 @@
-const BotTypes = require('talkify').BotTypes;
+const talkify: any = require('talkify');
 
-const Skill = BotTypes.Skill;
-const SingleLineMessage = BotTypes.SingleLineMessage;
+import Actions from './actions';
 
-class Action {
-    static hello(_ctx: any, _req: any, res: any, next: any): any {
-        res.message = new SingleLineMessage('Hi! My name is Kobe');
-        return next();
-    }
-}
+const BotTypes: any = talkify.BotTypes;
+const Skill: any = BotTypes.Skill;
 
 class Skills {
-    static get(bot: any): void {
-        bot.addSkill(new Skill('helloSkill', 'hello', Action.hello));
+    public static get(bot: any): void {
+        bot.addSkill(new Skill('helloSkill', 'hello', Actions.handleHello));
+        return bot.addSkill(new Skill('howAreYouSkill', 'how_are_you', Actions.handleHowAreYou));
     }
 }
 

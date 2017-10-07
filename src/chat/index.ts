@@ -3,7 +3,7 @@
 import * as _ from 'lodash';
 
 // No type validation
-const talkify = require('talkify');
+const talkify: any = require('talkify');
 
 import Skills from './skills';
 import Training from './training';
@@ -12,18 +12,18 @@ const BotTypes = talkify.BotTypes;
 const TrainingDocument = BotTypes.TrainingDocument;
 
 class Chat {
-    private static getTrainingDocuments(): any {
-        return _.flatten(_.map(Training.get(), function (trainingDataSet: Array<string>, topicName: string) {
-            return trainingDataSet.map(function (trainingData: string) {
+    public static init(): any {
+        const bot: any = new talkify.Bot();
+        bot.trainAll(Chat.getTrainingDocuments(), Skills.get.bind(null, bot));
+        return bot;
+    }
+
+    private static getTrainingDocuments(): string[] {
+        return _.flatten(_.map(Training.get(), (trainingDataSet: string[], topicName: string) => {
+            return trainingDataSet.map((trainingData: string): any => {
                 return new TrainingDocument(topicName, trainingData);
             });
         }));
-    }
-
-    static init(): any {
-        const bot = new talkify.Bot();
-        bot.trainAll(Chat.getTrainingDocuments(), Skills.get.bind(null, bot, ));
-        return bot;
     }
 }
 

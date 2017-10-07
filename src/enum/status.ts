@@ -1,15 +1,15 @@
-interface status {
+export interface status {
     code: number,
     message: string,
     retryable: boolean
 }
 
-interface statusSet {
+export interface statusSet {
     readonly [index: number]: status
 }
 
 class Status {
-    static get(): statusSet {
+    public static get(): statusSet {
         return {
             200: {
                 code: 200,
@@ -19,7 +19,7 @@ class Status {
 
             500: {
                 code: 500,
-                message: 'InternalError',
+                message: 'Internal Error',
                 retryable: false
             }
         };

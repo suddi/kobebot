@@ -31,39 +31,35 @@
     "compile": "tsc",
     "coverage": "istanbul cover _mocha -- --opts test/options/default.opts",
     "doctest": "mocha --opts test/options/doctest.opts",
-    "lint": "eslint .",
+    "lint": "tslint --config ./tslint.json src/**/*.ts",
     "prepush": "npm test",
     "security-check": "nsp check --output summary",
-    "start": "ts-node --project tsconfig.json src/app.ts",
+    "start": "ts-node --project tsconfig.json src/app.ts | bunyan --output short",
     "test": "npm run lint"
   },
   "dependencies": {
     "botbuilder": "^3.0.0",
+    "bunyan": "^1.8.12",
     "lodash": "^4.0.0",
     "restify": "^6.0.0",
     "talkify": "^2.0.0"
   },
   "devDependencies": {
+    "@types/bunyan": "^1.8.3",
     "@types/lodash": "^4.0.0",
     "@types/restify": "^5.0.0",
-    "@types/node": "^8.0.0",
     "chai": "^4.0.0",
-    "co-mocha": "^1.0.0",
     "eslint": "^4.0.0",
     "eslint-config-suddi": "^4.0.0",
     "husky": "^0.14.0",
     "istanbul": "^0.4.0",
     "jsdoctest": "^1.0.0",
-    "mocha": "^3.0.0",
+    "mocha": "^4.0.0",
     "nsp": "^2.0.0",
-    "rewire": "^2.0.0",
-    "sinon": "^4.0.0",
     "ts-node": "^3.0.0",
+    "tslint": "^5.7.0",
+    "tslint-eslint-rules": "^4.1.1",
     "typescript": "^2.0.0",
     "typescript-eslint-parser": "^8.0.0"
-  },
-  "eslintConfig": {
-    "extends": "suddi/backend",
-    "parser": "typescript-eslint-parser"
   }
 }

@@ -1,35 +1,36 @@
-interface appData {
+export interface appData {
     name: string
 }
 
-interface botCredentials {
+export interface botCredentials {
     appId: string,
     appPassword: string
 }
 
 class Config {
-    static getAppData(): appData {
+    public static getAppData(): appData {
         return {
             name: 'kobebot'
         };
     }
 
-    static getEnv(): string {
+    public static getEnv(): string {
         return process.env.NODE_ENV || 'development';
     }
 
-    static getPort(): number {
-        return parseInt(process.env.PORT, 10) || 8000;
+    public static getPort(): number {
+        const port: string = process.env.PORT || '';
+        return parseInt(port, 10) || 3000;
     }
 
-    static getTablename(): string {
+    public static getTablename(): string {
         return process.env.TABLENAME || '';
     }
 
-    static getBotCredentials(): botCredentials {
+    public static getBotCredentials(): botCredentials {
         return {
-            appId: process.env.MICROSOFT_APP_ID || '',
-            appPassword: process.env.MICROSOFT_APP_PASSWORD || ''
+            appId: process.env.MICROSOFT_APP_ID || '311b7cee-8bf8-4ef6-a188-00828c31f5a8',
+            appPassword: process.env.MICROSOFT_APP_PASSWORD || 'TC4983fWtaZ98DfRuibLL71'
         };
     }
 };
