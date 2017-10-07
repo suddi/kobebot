@@ -13,11 +13,11 @@ interface Message {
 }
 
 class Controller {
-    public static makeBotResponder(logger: Logger, chatter:any): (session: any) => void {
+    public static makeBotResponder(logger: Logger, chatter: any): (session: any) => void {
         return function (session: any): void {
             const userId: string = _.get(session, 'message.user.id', '');
-            const message: string = _.get(session, 'message.text', 'hello');
-            return chatter.resolve(userId, message, function (err: Error | null, messages: Array<Message>) {
+            const messageText: string = _.get(session, 'message.text', 'hello');
+            return chatter.resolve(userId, messageText, function (err: Error | null, messages: Array<Message>) {
                 if (err) {
                     logger.error(err.stack);
                     return session
