@@ -1,4 +1,10 @@
 {
+    "check-coverage": true,
+    "per-file": false,
+    "lines": 50,
+    "statements": 50,
+    "functions": 30,
+    "branches": 50,
     "extension": [
         ".ts"
     ],
@@ -7,8 +13,8 @@
         "src/test/**/*.ts"
     ],
     "include": [
-        "src/*.ts",
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "src/*.ts"
     ],
     "reporter": [
         "lcov",
