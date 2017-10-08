@@ -31,7 +31,7 @@
     "coverage": "nyc _mocha --opts src/test/mocha.opts",
     "lint": "tslint --config ./tslint.json src/*.ts src/**/*.ts",
     "prepush": "npm test",
-    "security-check": "nsp check --output summary --warn-only",
+    "security-check": "nsp check --output summary",
     "start": "ts-node --project tsconfig.json src/app.ts | bunyan --output short",
     "test": "npm run lint && npm run security-check && npm run coverage && npm run compile"
   },
