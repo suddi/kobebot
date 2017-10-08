@@ -11,6 +11,11 @@ import Training from './training';
 const BotTypes = talkify.BotTypes;
 const TrainingDocument = BotTypes.TrainingDocument;
 
+export interface ChatMessage {
+    type: string,
+    content: string
+}
+
 class Chat {
     public static init(): any {
         const bot: any = new talkify.Bot();

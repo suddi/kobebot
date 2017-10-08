@@ -29,37 +29,35 @@
   "scripts": {
     "check-coverage": "istanbul check-coverage",
     "compile": "tsc",
-    "coverage": "istanbul cover _mocha -- --opts test/options/default.opts",
-    "doctest": "mocha --opts test/options/doctest.opts",
-    "lint": "tslint --config ./tslint.json src/**/*.ts",
+    "coverage": "nyc _mocha --opts src/test/options/default.opts",
+    "lint": "tslint --config ./tslint.json src/*.ts src/**/*.ts",
     "prepush": "npm test",
-    "security-check": "nsp check --output summary",
+    "security-check": "nsp check --output summary --warn-only",
     "start": "ts-node --project tsconfig.json src/app.ts | bunyan --output short",
-    "test": "npm run lint"
+    "test": "npm run lint && npm run security-check && npm run coverage"
   },
   "dependencies": {
     "botbuilder": "^3.0.0",
-    "bunyan": "^1.8.12",
+    "bunyan": "^1.0.0",
     "lodash": "^4.0.0",
     "restify": "^6.0.0",
     "talkify": "^2.0.0"
   },
   "devDependencies": {
-    "@types/bunyan": "^1.8.3",
+    "@types/bunyan": "^1.0.0",
+    "@types/chai": "^4.0.0",
     "@types/lodash": "^4.0.0",
+    "@types/mocha": "^2.0.0",
     "@types/restify": "^5.0.0",
     "chai": "^4.0.0",
-    "eslint": "^4.0.0",
-    "eslint-config-suddi": "^4.0.0",
     "husky": "^0.14.0",
-    "istanbul": "^0.4.0",
-    "jsdoctest": "^1.0.0",
     "mocha": "^4.0.0",
     "nsp": "^2.0.0",
+    "nyc": "^11.0.0",
+    "source-map-support": "^0.5.0",
     "ts-node": "^3.0.0",
     "tslint": "^5.7.0",
     "tslint-eslint-rules": "^4.1.1",
-    "typescript": "^2.0.0",
-    "typescript-eslint-parser": "^8.0.0"
+    "typescript": "^2.0.0"
   }
 }

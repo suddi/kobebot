@@ -1,3 +1,5 @@
+'use strict';
+
 import * as bunyan from 'bunyan';
 import {createServer, RequestHandlerType, Server} from 'restify';
 
@@ -6,13 +8,13 @@ import Chat from './chat';
 import Config from './config';
 import Controller from './controller';
 
-import {appData} from './config';
+import {AppData} from './config';
 
 type Logger = bunyan;
 
 class App {
     public static bootstrap(): Server {
-        const appConfig: appData = Config.getAppData();
+        const appConfig: AppData = Config.getAppData();
         const env: string = Config.getEnv();
         const app: Server = createServer(appConfig);
 

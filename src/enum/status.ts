@@ -1,3 +1,5 @@
+'use strict';
+
 export interface status {
     code: number,
     message: string,

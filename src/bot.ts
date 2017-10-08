@@ -1,3 +1,5 @@
+'use strict';
+
 import {ChatConnector, UniversalBot} from 'botbuilder';
 import * as bunyan from 'bunyan';
 import {Request, Response} from 'restify';
