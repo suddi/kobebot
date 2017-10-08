@@ -32,7 +32,8 @@
     "lint": "tslint --config ./tslint.json src/*.ts src/**/*.ts",
     "prepush": "npm test",
     "security-check": "nsp check --output summary",
-    "start": "ts-node --project tsconfig.json src/app.ts | bunyan --output short",
+    "start": "npm run compile && node lib/app.js",
+    "server": "ts-node --project tsconfig.json src/app.ts | bunyan --output short",
     "test": "npm run lint && npm run security-check && npm run coverage && npm run compile"
   },
   "dependencies": {

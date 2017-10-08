@@ -31,8 +31,8 @@ class Config {
 
     public static getBotCredentials(): BotCredentials {
         return {
-            appId: process.env.MICROSOFT_APP_ID || '311b7cee-8bf8-4ef6-a188-00828c31f5a8',
-            appPassword: process.env.MICROSOFT_APP_PASSWORD || 'TC4983fWtaZ98DfRuibLL71'
+            appId: process.env.MICROSOFT_APP_ID || '',
+            appPassword: process.env.MICROSOFT_APP_PASSWORD || ''
         };
     }
 }
