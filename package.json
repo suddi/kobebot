@@ -19,7 +19,7 @@
   "files": [
     "src"
   ],
-  "main": "src/app.js",
+  "main": "src/app.ts",
   "license": "Apache-2.0",
   "keywords": [],
   "engines": {
@@ -33,7 +33,7 @@
     "lint": "tslint --config ./tslint.json src/*.ts src/**/*.ts",
     "prepush": "npm test",
     "security-check": "nsp check --output summary",
-    "start": "npm run compile && node lib/app.js",
+    "start": "node lib/app.js",
     "server": "ts-node --project tsconfig.json src/app.ts | bunyan --output short",
     "test": "npm run lint && npm run security-check && npm run coverage && npm run compile"
   },
@@ -42,8 +42,7 @@
     "bunyan": "^1.0.0",
     "lodash": "^4.0.0",
     "restify": "^6.0.0",
-    "talkify": "^2.0.0",
-    "typescript": "^2.0.0"
+    "talkify": "^2.0.0"
   },
   "devDependencies": {
     "@types/bunyan": "^1.0.0",
@@ -60,6 +59,7 @@
     "source-map-support": "^0.5.0",
     "ts-node": "^3.0.0",
     "tslint": "^5.0.0",
-    "tslint-eslint-rules": "^4.0.0"
+    "tslint-eslint-rules": "^4.0.0",
+    "typescript": "^2.0.0"
   }
 }
