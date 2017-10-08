@@ -42,7 +42,8 @@
     "bunyan": "^1.0.0",
     "lodash": "^4.0.0",
     "restify": "^6.0.0",
-    "talkify": "^2.0.0"
+    "talkify": "^2.0.0",
+    "typescript": "^2.0.0"
   },
   "devDependencies": {
     "@types/bunyan": "^1.0.0",
@@ -59,7 +60,6 @@
     "source-map-support": "^0.5.0",
     "ts-node": "^3.0.0",
     "tslint": "^5.0.0",
-    "tslint-eslint-rules": "^4.0.0",
-    "typescript": "^2.0.0"
+    "tslint-eslint-rules": "^4.0.0"
   }
 }
