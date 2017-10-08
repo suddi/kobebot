@@ -1,5 +1,0 @@
-src
---recursive
---require ts-node/register
---reporter spec
---require jsdoctest
