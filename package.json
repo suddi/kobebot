@@ -42,7 +42,7 @@
     "botbuilder": "^3.0.0",
     "bunyan": "^1.0.0",
     "lodash": "^4.0.0",
-    "restify": "^6.0.0",
+    "restify": "^8.1.0",
     "talkify": "^2.0.0"
   },
   "devDependencies": {
